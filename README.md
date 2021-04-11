@@ -1,8 +1,8 @@
-# Hated It!
+# Hated It
 
 A Slack app for personal use.
 
-![Hated It!](https://media.giphy.com/media/ZKLcZPHPEZnd6/giphy.gif)
+![Hated It](https://media.giphy.com/media/ZKLcZPHPEZnd6/giphy.gif)
 
 ## Development
 
