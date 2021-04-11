@@ -1,0 +1,6 @@
+create_table("lists") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("user_id", "uuid", {})
+	t.Timestamps()
+	t.ForeignKey("user_id", {"users": ["id"]}, {})
+}

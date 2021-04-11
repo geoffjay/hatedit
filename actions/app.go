@@ -6,6 +6,7 @@ import (
 	forcessl "github.com/gobuffalo/mw-forcessl"
 	i18n "github.com/gobuffalo/mw-i18n"
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
+	"github.com/gobuffalo/packr/v2"
 	"github.com/unrolled/secure"
 
 	"hatedit/models"
@@ -61,6 +62,7 @@ func App() *buffalo.App {
 		app.Use(popmw.Transaction(models.DB))
 
 		app.GET("/", HomeHandler)
+		app.POST("/", CommandHandler)
 	}
 
 	return app

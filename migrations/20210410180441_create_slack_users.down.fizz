@@ -1,0 +1,1 @@
+drop_table("slack_users")

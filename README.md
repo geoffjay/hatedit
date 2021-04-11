@@ -1,35 +1,42 @@
-# Welcome to Buffalo!
+# Hated It!
 
-Thank you for choosing Buffalo for your web development needs.
+A Slack app for personal use.
 
-## Database Setup
+![Hated It!](https://media.giphy.com/media/ZKLcZPHPEZnd6/giphy.gif)
 
-It looks like you chose to set up your application using a database! Fantastic!
+## Development
 
-The first thing you need to do is open up the "database.yml" file and edit it to use the correct usernames, passwords, hosts, etc... that are appropriate for your environment.
+### Setup
 
-You will also need to make sure that **you** start/install the database of your choice. Buffalo **won't** install and start it for you.
+* [install][gobuffalo-install] `buffalo`
+* [install][gobuffalo-install-soda] `soda`
+* [install][ngrok-install] `ngrok`
 
-### Create Your Databases
+### Execution
 
-Ok, so you've edited the "database.yml" file and started your database, now Buffalo can create the databases in that file for you:
+These only need to be run once to setup the databases before running.
 
-	$ buffalo pop create -a
+```shell
+cp .env.development .env
+soda create -a
+```
 
-## Starting the Application
+Run the development server with hot reload.
 
-Buffalo ships with a command that will watch your application and automatically rebuild the Go binary and any assets for you. To do that run the "buffalo dev" command:
+```shell
+buffalo dev
+```
 
-	$ buffalo dev
+### Remote Access
 
-If you point your browser to [http://127.0.0.1:3000](http://127.0.0.1:3000) you should see a "Welcome to Buffalo!" page.
+Create a public tunnel using `ngrok`.
 
-**Congratulations!** You now have your Buffalo application up and running.
+```shell
+ngrok http 3000
+```
 
-## What Next?
+<!-- links -->
 
-We recommend you heading over to [http://gobuffalo.io](http://gobuffalo.io) and reviewing all of the great documentation there.
-
-Good luck!
-
-[Powered by Buffalo](http://gobuffalo.io)
+[gobuffalo-install]: https://gobuffalo.io/en/docs/getting-started/installation/
+[gobuffalo-install-soda]: https://gobuffalo.io/en/docs/db/toolbox#installing-cli-support
+[ngrok-install]: https://dashboard.ngrok.com/get-started/setup
