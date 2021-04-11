@@ -9,7 +9,7 @@ import (
 	"github.com/gobuffalo/packr/v2"
 	"github.com/unrolled/secure"
 
-	"hatedit/models"
+	"github.com/geoffjay/hatedit/models"
 
 	"github.com/gobuffalo/buffalo-pop/v2/pop/popmw"
 	contenttype "github.com/gobuffalo/mw-contenttype"

@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"hatedit/actions"
+	"github.com/geoffjay/hatedit/actions"
 )
 
 // main is the starting point for your Buffalo application.

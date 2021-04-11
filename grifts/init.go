@@ -1,7 +1,7 @@
 package grifts
 
 import (
-	"hatedit/actions"
+	"github.com/geoffjay/hatedit/actions"
 
 	"github.com/gobuffalo/buffalo"
 )

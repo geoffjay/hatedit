@@ -3,5 +3,5 @@ create_table("items") {
 	t.Column("text", "string")
 	t.Column("list_id", "uuid")
 	t.Timestamps()
-	t.ForeignKey("list_id", {"lists": ["id"]}, {})
+	t.ForeignKey("list_id", {"lists": ["id"]}, {"on_delete": "cascade"})
 }
