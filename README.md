@@ -26,12 +26,14 @@ These only need to be run once to setup the databases before running.
 
 ```shell
 cp .env.development .env
+docker-compose up db
 soda create -a
 ```
 
 Run the development server with hot reload.
 
 ```shell
+docker-compose up -d db
 soda migrate
 buffalo dev
 ```

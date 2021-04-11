@@ -13,5 +13,30 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data/
 
+  app:
+    image: geoffjay/hatedit:0.1rc1
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+
+  # web:
+
+  ngrok:
+    image: wernight/ngrok:latest
+    depends_on:
+      - app
+    environment:
+      NGROK_AUTH: ${NGROK_AUTHTOKEN}
+      NGROK_REGION: ${NGROK_REGION}
+      NGROK_HOSTNAME: ${NGROK_HOSTNAME}
+      NGROK_PORT: ${NGROK_PORT}
+    ports:
+      - 4040:4040
+    restart: unless-stopped
+
 volumes:
   pgdata:
