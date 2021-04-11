@@ -24,6 +24,7 @@ soda create -a
 Run the development server with hot reload.
 
 ```shell
+soda migrate
 buffalo dev
 ```
 
