@@ -1,27 +1,16 @@
+**/*~
+**/*.sw[op]
 **/.DS_Store
 **/*.log
-**/*.sqlite
-.sass-cache/
 *-packr.go
-
-.svn
-.env
-.grifter/
-*.pid
-.console_history
-.sass-cache/*
-.jhw-cache/
-jhw.*
-
-.idea/
-.vscode/
-*.sublime*
 
 coverage
 coverage.data
 
+.env
 scripts/seed.sh
 
+.docker_build/
 bin/
 tmp/
 node_modules/
@@ -29,5 +18,3 @@ public/assets/
 vendor/
 dist/
 generated/
-
-.vendor/

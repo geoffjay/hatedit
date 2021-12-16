@@ -1,0 +1,10 @@
+{
+  "name": "Hated it!",
+  "description": "A Slack app that does things.",
+  "keywords": [
+    "slack",
+    "go",
+  ],
+  "website": "http://github.com/geoffjay/hatedit",
+  "repository": "http://github.com/geoffjay/hatedit"
+}
