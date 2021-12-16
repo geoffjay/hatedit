@@ -3,6 +3,7 @@ package grifts
 import (
 	"errors"
 	"fmt"
+
 	"github.com/geoffjay/hatedit/models"
 	"github.com/markbates/grift/grift"
 )

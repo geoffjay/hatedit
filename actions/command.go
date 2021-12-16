@@ -4,9 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/geoffjay/hatedit/models"
 	"log"
 	"net/http"
+
+	"github.com/geoffjay/hatedit/models"
 
 	"github.com/gobuffalo/buffalo"
 )

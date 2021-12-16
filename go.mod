@@ -33,11 +33,15 @@ require (
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.4.7 // indirect
 	github.com/go-sql-driver/mysql v1.5.0 // indirect
+	github.com/gobuffalo/attrs v1.0.0 // indirect
+	github.com/gobuffalo/buffalo-heroku v1.0.9 // indirect
 	github.com/gobuffalo/events v1.4.1 // indirect
 	github.com/gobuffalo/fizz v1.10.0 // indirect
 	github.com/gobuffalo/flect v0.2.1 // indirect
 	github.com/gobuffalo/genny v0.6.0 // indirect
+	github.com/gobuffalo/genny/v2 v2.0.5 // indirect
 	github.com/gobuffalo/github_flavored_markdown v1.1.0 // indirect
+	github.com/gobuffalo/gogen v0.2.0 // indirect
 	github.com/gobuffalo/helpers v0.6.1 // indirect
 	github.com/gobuffalo/httptest v1.5.0 // indirect
 	github.com/gobuffalo/logger v1.0.3 // indirect
@@ -47,6 +51,7 @@ require (
 	github.com/gobuffalo/packd v1.0.0 // indirect
 	github.com/gobuffalo/plush v3.8.3+incompatible // indirect
 	github.com/gobuffalo/plush/v4 v4.0.0 // indirect
+	github.com/gobuffalo/plushgen v0.1.2 // indirect
 	github.com/gobuffalo/tags/v3 v3.1.0 // indirect
 	github.com/gobuffalo/validate/v3 v3.1.0 // indirect
 	github.com/gorilla/mux v1.7.3 // indirect
@@ -68,6 +73,7 @@ require (
 	github.com/lib/pq v1.3.0 // indirect
 	github.com/luna-duclos/instrumentedsql v1.1.3 // indirect
 	github.com/markbates/errx v1.1.0 // indirect
+	github.com/markbates/inflect v1.0.4 // indirect
 	github.com/markbates/oncer v1.0.0 // indirect
 	github.com/markbates/refresh v1.10.0 // indirect
 	github.com/markbates/safe v1.0.1 // indirect
@@ -92,11 +98,13 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
 	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2 // indirect
+	golang.org/x/mod v0.2.0 // indirect
 	golang.org/x/net v0.0.0-20210226172049-e18ecbb05110 // indirect
 	golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9 // indirect
 	golang.org/x/sys v0.0.0-20210403161142-5e06dd20ab57 // indirect
 	golang.org/x/term v0.0.0-20210406210042-72f3dc4e9b72 // indirect
 	golang.org/x/text v0.3.6 // indirect
+	golang.org/x/tools v0.0.0-20200308013534-11ec41452d41 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
