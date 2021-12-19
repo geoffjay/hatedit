@@ -12,7 +12,7 @@ require (
 	github.com/gobuffalo/mw-forcessl v0.0.0-20180802152810-73921ae7a130
 	github.com/gobuffalo/mw-i18n v0.0.0-20190129204410-552713a3ebb4
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20190129202837-395da1998525
-	github.com/gobuffalo/packr/v2 v2.8.1
+	github.com/gobuffalo/packr/v2 v2.7.1
 	github.com/gobuffalo/pop/v6 v6.0.1
 	github.com/gobuffalo/suite/v4 v4.0.2
 	github.com/gobuffalo/validate/v3 v3.3.1
@@ -65,7 +65,6 @@ require (
 	github.com/karrick/godirwalk v1.16.1 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
 	github.com/luna-duclos/instrumentedsql v1.1.3 // indirect
-	github.com/markbates/errx v1.1.0 // indirect
 	github.com/markbates/oncer v1.0.0 // indirect
 	github.com/markbates/refresh v1.12.0 // indirect
 	github.com/markbates/safe v1.0.1 // indirect

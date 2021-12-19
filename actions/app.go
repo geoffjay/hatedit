@@ -80,7 +80,7 @@ func App() *buffalo.App {
 		api.GET("/users", UsersIndex)
 		api.GET("/users/{user_id}", UsersShow)
 		api.POST("/users", UsersCreate)
-		// app.Resource("/lists", ListsResource{})
+		api.Resource("/lists", ListsResource{})
 	}
 
 	return app
