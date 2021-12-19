@@ -1,20 +1,23 @@
 package actions
 
 import (
+	"errors"
+	"fmt"
+
+	"github.com/geoffjay/hatedit/models"
+
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/buffalo-pop/v3/pop/popmw"
 	"github.com/gobuffalo/envy"
+	contenttype "github.com/gobuffalo/mw-contenttype"
+	csrf "github.com/gobuffalo/mw-csrf"
 	forcessl "github.com/gobuffalo/mw-forcessl"
 	i18n "github.com/gobuffalo/mw-i18n"
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
 	"github.com/gobuffalo/packr/v2"
-	"github.com/unrolled/secure"
-
-	"github.com/geoffjay/hatedit/models"
-
-	"github.com/gobuffalo/buffalo-pop/v2/pop/popmw"
-	contenttype "github.com/gobuffalo/mw-contenttype"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/rs/cors"
+	"github.com/unrolled/secure"
 )
 
 // ENV is used to help switch settings based on where the
@@ -56,13 +59,28 @@ func App() *buffalo.App {
 		// Set the request content type to JSON
 		app.Use(contenttype.Set("application/json"))
 
+		// Protect against CSRF attacks. https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
+		// Remove to disable this.
+		app.Use(csrf.New)
+
 		// Wraps each request in a transaction.
 		//  c.Value("tx").(*pop.Connection)
 		// Remove to disable this.
 		app.Use(popmw.Transaction(models.DB))
 
+		// Setup and use translations:
+		app.Use(translations())
+
 		app.GET("/", HomeHandler)
 		app.POST("/", CommandHandler)
+
+		// Add API endpoint
+		api := app.Group("/api/v1")
+		api.Use(authorizeAPI)
+		api.GET("/users", UsersIndex)
+		api.GET("/users/{user_id}", UsersShow)
+		api.POST("/users", UsersCreate)
+		// app.Resource("/lists", ListsResource{})
 	}
 
 	return app
@@ -90,4 +108,18 @@ func forceSSL() buffalo.MiddlewareFunc {
 		SSLRedirect:     ENV == "production",
 		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
 	})
+}
+
+// authorizeAPI will perform a basic auth check for API requests.
+func authorizeAPI(next buffalo.Handler) buffalo.Handler {
+	return func(c buffalo.Context) error {
+		token := c.Request().Header.Get("Authorization")
+		if len(token) == 0 {
+			return errors.New("unauthorized")
+		}
+		if token != fmt.Sprintf("Bearer %s", envy.Get("API_TOKEN", "")) {
+			return errors.New("unauthorized")
+		}
+		return next(c)
+	}
 }
