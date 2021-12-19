@@ -43,7 +43,7 @@ func (v ListsResource) Create(c buffalo.Context) error {
 	if err := models.DB.Create(list); err != nil {
 		return c.Render(http.StatusInternalServerError, r.JSON(actionError(err)))
 	}
-	return c.Render(http.StatusOK, r.JSON(map[string]*models.List{"user": list}))
+	return c.Render(http.StatusOK, r.JSON(map[string]*models.List{"list": list}))
 }
 
 // Update default implementation.
